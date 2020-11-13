@@ -4,7 +4,7 @@ var passwordText = document.querySelector("#password")
 // Write password to the #password input
 function writePassword() {
     
-  var pasLength = prompt("How many characters would you like your password to be? (8-128)")
+  var pasLength = parseInt(prompt("How many characters would you like your password to be? (8-128)"))
   
   if((pasLength >= 8) && (pasLength <= 128)) {
     
@@ -27,27 +27,27 @@ function writePassword() {
       }
 
       if(symConfirm) {
-        for(i = 0; i > symbols.length; ++i) {
+        for(i = 0; i < symbols.length; ++i) {
           passPool.push(symbols[i])
         }
       }
 
       
       if(lowConfirm) {
-        for(i = 0; i > lowerCase.length; ++i) {
+        for(i = 0; i < lowerCase.length; ++i) {
           passPool.push(lowerCase[i])
         }
       }
 
       
       if(uppConfirm) {
-        for(i = 0; i > upperCase.length; ++i) {
+        for(i = 0; i < upperCase.length; ++i) {
           passPool.push(upperCase[i])
         }
       }
 
       let passDraft = []; {
-        for(let i = 0; i < passPool.length; ++i) {
+        for(let i = 0; i < pasLength; ++i) {
         var ranSelect = Math.floor(Math.random() * Math.floor(passPool.length));
         passDraft.push(passPool[ranSelect])
         }
